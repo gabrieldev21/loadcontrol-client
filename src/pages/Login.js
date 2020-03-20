@@ -7,28 +7,38 @@ import Button from '@material-ui/core/Button'
 import { Container } from 'components'
 
 const useStyles = makeStyles({
-  root: {
-    width: '100vw',
-    height: '100vh',
+  paper: {
+    background: '',
+    height: 300,
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    padding: 16,
+    width: 300,
+  },
+  input: {
+    margin: '16px 0',
+    marginBottom: '32',
+  },
+  button: {
+    textTransform: 'capitalize',
+    // marginTop: 'auto',
   },
 })
 
-const Login = () => {
+const Login = props => {
   const classes = useStyles(props)
   return (
     <Container>
-      <Paper>
+      <Paper elevation={3} className={classes.paper}>
         <TextField required id="standard-required" label="Username" />
         <TextField
           id="standard-password-input"
           label="Password"
           type="password"
           autoComplete="current-password"
+          className={classes.input}
         />
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" className={classes.button}>
           Sign In
         </Button>
       </Paper>
