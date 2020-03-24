@@ -7,8 +7,6 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'rgb(27, 36, 48)',
     width: props => props.size,
     height: props => props.size,
-    padding: 8,
-    animation: 'spin 20s linear infinite',
   },
 }))
 
