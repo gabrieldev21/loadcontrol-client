@@ -3,11 +3,12 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   root: {
-    width: '100vw',
-    height: '100vh',
+    width: props => (props.full ? '100vw' : '100%'),
+    height: props => (props.full ? '100vh' : 'auto'),
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: props => (props.center ? 'center' : 'stretch'),
+    justifyContent: props => (props.center ? 'center' : 'flex-start'),
+    flexDirection: props => (props.column ? 'column' : 'row'),
   },
 })
 

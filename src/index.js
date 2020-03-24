@@ -4,16 +4,14 @@ import * as serviceWorker from './serviceWorker'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
 import { Login } from 'pages'
+import 'assets/normalize.css'
+import theme from 'utils/theme.json'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-
-const theme = createMuiTheme({})
+const themeProvider = createMuiTheme(theme)
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeProvider}>
       <Login />
     </ThemeProvider>
   )

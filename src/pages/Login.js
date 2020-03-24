@@ -1,48 +1,24 @@
 import React from 'react'
-import Paper from '@material-ui/core/Paper'
-import TextField from '@material-ui/core/TextField'
-import { makeStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
-
-import { Container } from 'components'
-
-const useStyles = makeStyles({
-  paper: {
-    background: '',
-    height: 300,
-    display: 'flex',
-    flexDirection: 'column',
-    padding: 16,
-    width: 300,
-  },
-  input: {
-    margin: '16px 0',
-    marginBottom: '32',
-  },
-  button: {
-    textTransform: 'capitalize',
-    // marginTop: 'auto',
-  },
-})
+import { Container, Button, Paper, Input, Avatar, Text } from 'components'
+import logo from 'assets/images/logo.png'
 
 const Login = props => {
-  const classes = useStyles(props)
   return (
-    <Container>
-      <Paper elevation={3} className={classes.paper}>
-        <TextField required id="standard-required" label="Username" />
-        <TextField
-          id="standard-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          className={classes.input}
-        />
-        <Button variant="contained" color="primary" className={classes.button}>
-          Sign In
-        </Button>
+    <Container full center>
+      <Paper maxWidth={380}>
+        <Container center column>
+          <Avatar size={92} style={{ marginBottom: '20px' }} src={logo} />
+          <Text variant="h6" style={{ marginBottom: '0.35em' }}>
+            Seja bem vindo Combatente
+          </Text>
+          <Text variant="body1">Insira suas credências para continuar </Text>
+        </Container>
+        <Input label="Usuário " required />
+        <Input label="Senha" required type="password" />
+        <Button>Entrar</Button>
       </Paper>
     </Container>
   )
 }
+
 export default Login
