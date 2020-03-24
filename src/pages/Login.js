@@ -7,7 +7,15 @@ const Login = props => {
     <Container full center>
       <Paper maxWidth={380}>
         <Container center column>
-          <Avatar size={92} style={{ marginBottom: '20px' }} src={logo} />
+          <Avatar
+            size={92}
+            style={{
+              marginBottom: '20px',
+              padding: 8,
+              animation: 'spin 20s linear infinite',
+            }}
+            src={logo}
+          />
           <Text variant="h6" style={{ marginBottom: '0.35em' }}>
             Seja bem vindo Combatente
           </Text>
