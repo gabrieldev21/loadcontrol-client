@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
+import { DefaultLayout } from 'components'
 import { logout } from 'redux/modules/user'
 
 const Dashboard = () => {
@@ -9,10 +10,10 @@ const Dashboard = () => {
     dispatch(logout())
   }
   return (
-    <div>
+    <DefaultLayout>
       <p>Chegou no Dashboard FDP</p>
       <button onClick={handleLogout}> Logout </button>
-    </div>
+    </DefaultLayout>
   )
 }
 
