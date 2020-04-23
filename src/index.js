@@ -4,8 +4,8 @@ import * as serviceWorker from './serviceWorker'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { Provider } from 'react-redux'
 
+import Routes from './Routes'
 import store from 'redux/store'
-import { Login } from 'pages'
 import 'assets/normalize.css'
 import theme from 'utils/theme.json'
 
@@ -15,7 +15,7 @@ function App() {
   return (
     <ThemeProvider theme={themeProvider}>
       <Provider store={store}>
-        <Login />
+        <Routes />
       </Provider>
     </ThemeProvider>
   )

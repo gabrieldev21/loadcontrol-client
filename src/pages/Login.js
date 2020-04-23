@@ -1,18 +1,23 @@
 import React from 'react'
 import { Container, Button, Paper, Input, Avatar, Text } from 'components'
 import logo from 'assets/images/logo.png'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { authentication } from 'redux/modules/user'
 
 const Login = props => {
+  const history = useHistory()
   const dispatch = useDispatch()
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
+  const isLogged = useSelector(state => !!state.user.token)
+  if (isLogged) history.replace('/')
 
-  const handleSubmit = evt => {
+  const handleSubmit = async evt => {
     evt.preventDefault()
-    dispatch(authentication({ username, password }))
+    const success = await dispatch(authentication({ username, password }))
+    if (success) history.replace('/')
   }
 
   return (
