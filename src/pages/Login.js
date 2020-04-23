@@ -1,14 +1,23 @@
 import React from 'react'
-import { Container, Button, Paper, Input, Avatar, Text } from 'components'
+import {
+  Container,
+  Button,
+  Paper,
+  Input,
+  Avatar,
+  Text,
+  Loading,
+} from 'components'
 import logo from 'assets/images/logo.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import { authentication } from 'redux/modules/user'
 
-const Login = props => {
+const Login = () => {
   const history = useHistory()
   const dispatch = useDispatch()
+  const [loading, setLoading] = React.useState(false)
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const isLogged = useSelector(state => !!state.user.token)
@@ -16,12 +25,15 @@ const Login = props => {
 
   const handleSubmit = async evt => {
     evt.preventDefault()
+    setLoading(true)
     const success = await dispatch(authentication({ username, password }))
+    setLoading(false)
     if (success) history.replace('/')
   }
 
   return (
     <Container full center>
+      <Loading open={loading} />
       <form onSubmit={handleSubmit}>
         <Paper maxWidth={380}>
           <Container center column>

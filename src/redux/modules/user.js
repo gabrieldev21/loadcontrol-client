@@ -26,6 +26,7 @@ export const authentication = ({ username, password }) => async dispatch => {
 }
 
 export const logout = () => dispatch => {
+  localStorage.removeItem('user')
   dispatch(logoutUser())
 }
 
