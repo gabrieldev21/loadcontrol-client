@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   },
 })
 
-const StyledButton = props => {
+const StyledButton = (props) => {
   const classes = useStyles(props)
   return (
     <Button
