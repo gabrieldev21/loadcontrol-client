@@ -1,6 +1,8 @@
 import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { makeStyles } from '@material-ui/core/styles'
+import InboxIcon from '@material-ui/icons/MoveToInbox'
+import MailIcon from '@material-ui/icons/Mail'
 
 import { Menu, Header } from 'components'
 
@@ -16,6 +18,13 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
 }))
+
+const list = [
+  { text: 'Inbox', icon: <InboxIcon />, route: '/test' },
+  { text: 'Starred', icon: <MailIcon />, route: '/test' },
+  { text: 'Send email', icon: <InboxIcon />, route: '/test' },
+  { text: 'Draft', icon: <MailIcon />, route: '/test' },
+]
 
 const DefaultLayout = (props) => {
   const { children } = props
@@ -36,6 +45,7 @@ const DefaultLayout = (props) => {
       />
 
       <Menu
+        list={list}
         mobileOpen={mobileOpen}
         handleDrawerToggle={handleDrawerToggle}
         drawerWidth={drawerWidth}

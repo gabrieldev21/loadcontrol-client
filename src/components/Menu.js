@@ -3,16 +3,13 @@ import Drawer from '@material-ui/core/Drawer'
 import Hidden from '@material-ui/core/Hidden'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import MailIcon from '@material-ui/icons/Mail'
+import { useHistory } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
-  toolbar: theme.mixins.toolbar,
-
   drawer: {
     [theme.breakpoints.up('sm')]: {
       width: (props) => props.drawerWidth,
@@ -22,40 +19,48 @@ const useStyles = makeStyles((theme) => ({
 
   drawerPaper: {
     width: (props) => props.drawerWidth,
+    backgroundColor: 'rgb(35, 47, 62)',
+  },
+  list: {
+    flex: 1,
+    maxHeight: 'calc(62px - 100vh)',
+    // height: 'auto',
+    backgroundColor: 'rgb(27, 36, 48)',
+    color: 'rgb(238, 238, 238)',
+    '& svg': { color: 'rgb(238, 238, 238)' },
   },
 }))
 
+const User = () => {
+  return (
+    <div style={{ height: 40, padding: '11px 16px' }}>
+      <p>XXXXXX</p>
+    </div>
+  )
+}
+
 const Menu = (props) => {
-  const { mobileOpen, handleDrawerToggle } = props
+  const { mobileOpen, handleDrawerToggle, list } = props
   const classes = useStyles(props)
   const theme = useTheme()
+  const history = useHistory()
+  const handleChangeRoute = (route) => {
+    history.replace(route)
+  }
 
   const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+    <List className={classes.list}>
+      {list.map((item, index) => (
+        <ListItem
+          onClick={() => handleChangeRoute(item.route)}
+          button
+          key={item.text}
+        >
+          <ListItemIcon>{item.icon}</ListItemIcon>
+          <ListItemText primary={item.text} />
+        </ListItem>
+      ))}
+    </List>
   )
 
   return (
@@ -85,10 +90,12 @@ const Menu = (props) => {
           open
         >
           {drawer}
+          <User />
         </Drawer>
       </Hidden>
     </nav>
   )
 }
 
+Menu.defaultProps = { list: [], drawerWidth: '260px' }
 export default Menu

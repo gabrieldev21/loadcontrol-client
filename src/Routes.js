@@ -10,8 +10,8 @@ import {
 
 import { Login, Dashboard } from 'pages'
 
-const PrivateRoute = props => {
-  const isLogged = useSelector(state => !!state.user.token)
+const PrivateRoute = (props) => {
+  const isLogged = useSelector((state) => !!state.user.token)
   return isLogged ? <Route {...props} /> : <Redirect to="/login" />
 }
 
