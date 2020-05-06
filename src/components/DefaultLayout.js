@@ -1,8 +1,8 @@
 import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { makeStyles } from '@material-ui/core/styles'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import MailIcon from '@material-ui/icons/Mail'
+import DashboardIcon from '@material-ui/icons/Dashboard'
+import AssignmentIcon from '@material-ui/icons/Assignment'
 
 import { Menu, Header } from 'components'
 
@@ -20,10 +20,8 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const list = [
-  { text: 'Inbox', icon: <InboxIcon />, route: '/test' },
-  { text: 'Starred', icon: <MailIcon />, route: '/test' },
-  { text: 'Send email', icon: <InboxIcon />, route: '/test' },
-  { text: 'Draft', icon: <MailIcon />, route: '/test' },
+  { text: 'Dashboard', icon: <DashboardIcon />, route: '/' },
+  { text: 'Reserva', icon: <AssignmentIcon />, route: '/booking' },
 ]
 
 const DefaultLayout = (props) => {
