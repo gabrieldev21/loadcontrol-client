@@ -3,6 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { makeStyles } from '@material-ui/core/styles'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import AssignmentIcon from '@material-ui/icons/Assignment'
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
 
 import { Menu, Header } from 'components'
 
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const list = [
   { text: 'Dashboard', icon: <DashboardIcon />, route: '/' },
   { text: 'Reserva', icon: <AssignmentIcon />, route: '/booking' },
+  { text: 'Logout', icon: <PowerSettingsNewIcon />, route: '/logout' },
 ]
 
 const DefaultLayout = (props) => {
