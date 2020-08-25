@@ -20,10 +20,10 @@ const Login = () => {
   const [loading, setLoading] = React.useState(false)
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
-  const isLogged = useSelector(state => !!state.user.token)
+  const isLogged = useSelector((state) => !!state.user.token)
   if (isLogged) history.replace('/')
 
-  const handleSubmit = async evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
     setLoading(true)
     const success = await dispatch(authentication({ username, password }))
@@ -49,14 +49,14 @@ const Login = () => {
             <Text variant="h6" style={{ marginBottom: '0.35em' }}>
               Seja bem vindo Combatente
             </Text>
-            <Text variant="body1">Insira suas credências para continuar </Text>
+            <Text variant="body1">Insira seus dados para continuar </Text>
           </Container>
 
           <Input
             label="Usuário"
             required
             value={username}
-            onChange={evt => {
+            onChange={(evt) => {
               setUsername(evt.target.value)
             }}
           />
@@ -65,7 +65,7 @@ const Login = () => {
             required
             type="password"
             value={password}
-            onChange={evt => {
+            onChange={(evt) => {
               setPassword(evt.target.value)
             }}
           />

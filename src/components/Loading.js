@@ -36,7 +36,7 @@ const Loading = ({ open, ...props }) => {
           <Avatar
             size={120}
             style={{
-              marginBottom: '20px',
+              marginBottom: '10px',
               padding: 8,
               animation: 'spin 2s linear infinite',
               backgroundColor: 'transparent',
