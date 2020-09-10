@@ -23,6 +23,7 @@ const MenuList = (props) => {
   const handleChangeRoute = (route) => {
     history.replace(route)
   }
+  
   return (
     <List className={classes.list}>
       {list.map((item, index) => (

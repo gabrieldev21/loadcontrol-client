@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import AssignmentIcon from '@material-ui/icons/Assignment'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew'
+import RadioIcon from '@material-ui/icons/Radio';
+import SettingsPhoneIcon from '@material-ui/icons/SettingsPhone';
 
 import { Menu, Header } from 'components'
 
@@ -23,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
 const list = [
   { text: 'Dashboard', icon: <DashboardIcon />, route: '/' },
   { text: 'Reserva', icon: <AssignmentIcon />, route: '/booking' },
+  { text: 'Motorola', icon: <RadioIcon />, route: '/' },
+  { text: 'Harris', icon: <SettingsPhoneIcon />, route: '/' },
   { text: 'Logout', icon: <PowerSettingsNewIcon />, route: '/logout' },
+
 ]
 
 const DefaultLayout = (props) => {

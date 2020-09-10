@@ -31,7 +31,7 @@ const User = (props) => {
           {name}
         </Text>
         <Text variant="caption" className={classes.text}>
-          3º Sargento
+          Aux do Pel
         </Text>
       </div>
     </div>

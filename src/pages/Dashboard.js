@@ -11,8 +11,7 @@ const Dashboard = () => {
   }
   return (
     <DefaultLayout>
-      <p>Chegou no Dashboard , Parabéns!</p>
-      <button onClick={handleLogout}> Logout </button>
+      <p>Chegou no Dashboard , Parabéns! </p>
     </DefaultLayout>
   )
 }
