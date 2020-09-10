@@ -24,9 +24,15 @@ const useStyles = makeStyles((theme) => ({
 
 const list = [
   { text: 'Dashboard', icon: <DashboardIcon />, route: '/' },
-  { text: 'Reserva', icon: <AssignmentIcon />, route: '/booking' },
-  { text: 'Motorola', icon: <RadioIcon />, route: '/' },
-  { text: 'Harris', icon: <SettingsPhoneIcon />, route: '/' },
+  {
+    text: 'Reserva', icon: <AssignmentIcon />, route: '/booking',
+    subList:[
+      { text: 'Motorola', icon: <RadioIcon />, route: '/' },
+      { text: 'Harris', icon: <SettingsPhoneIcon />, route: '/' },
+    ]
+  },
+
+
   { text: 'Logout', icon: <PowerSettingsNewIcon />, route: '/logout' },
 
 ]
