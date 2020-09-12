@@ -7,12 +7,9 @@ import { logout } from 'redux/modules/user'
 const Dashboard = () => {
   const dispatch = useDispatch()
 
-  const handleLogout = () => {
-    dispatch(logout())
-  }
   return (
     <DefaultLayout>
-      <p>Chegou no Dashboard , Congrats! </p>
+      <p>Chegou no Dashboard , Parabéns! </p>
     </DefaultLayout>
   )
 }
