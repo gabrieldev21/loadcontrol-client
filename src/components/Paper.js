@@ -7,8 +7,10 @@ const useStyles = makeStyles({
     boxShadow: '0 0 14px 0 rgba(53,64,82,.05)',
     background: '#fff',
     height: 500,
+
     display: 'flex',
     flexDirection: 'column',
+    
     padding: 40,
     maxWidth: props => props.maxWidth,
     width: '100%',

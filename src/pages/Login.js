@@ -11,18 +11,29 @@ import {
 import logo from 'assets/images/logo.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { makeStyles } from '@material-ui/core/styles'
 
 import { authentication } from 'redux/modules/user'
 
-const Login = () => {
+const useStyles = makeStyles({
+  form: {
+    display: 'flex',
+    width: '400px',
+  },
+})
+
+const Login = (props) => {
   const history = useHistory()
   const dispatch = useDispatch()
   const [loading, setLoading] = React.useState(false)
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const isLogged = useSelector((state) => !!state.user.token)
+  
+  const classes = useStyles(props)
+  
   if (isLogged) history.replace('/')
-
+  
   const handleSubmit = async (evt) => {
     evt.preventDefault()
     setLoading(true)
@@ -30,12 +41,15 @@ const Login = () => {
     setLoading(false)
     if (success) history.replace('/')
   }
-
+  
+  
   return (
     <Container full center>
       <Loading open={loading} />
-      <form onSubmit={handleSubmit}>
-        <Paper maxWidth={380}>
+      <form onSubmit={handleSubmit}
+      className={classes.form}
+      >
+         <Paper maxWidth={380}>
           <Container center column>
             <Avatar
               size={92}
@@ -50,7 +64,7 @@ const Login = () => {
               Seja bem vindo Combatente
             </Text>
             <Text variant="body1">Insira seus dados para continuar </Text>
-          </Container>
+          </Container>  
 
           <Input
             label="Usuário"
@@ -74,6 +88,7 @@ const Login = () => {
       </form>
     </Container>
   )
+  
 }
 
 export default Login
