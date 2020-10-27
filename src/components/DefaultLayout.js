@@ -31,8 +31,7 @@ const list = [
       { text: 'Harris', icon: <SettingsPhoneIcon />, route: '/' },
     ]
   },
-
-
+  
   { text: 'Logout', icon: <PowerSettingsNewIcon />, route: '/logout' },
 
 ]

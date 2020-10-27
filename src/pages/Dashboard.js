@@ -1,14 +1,17 @@
 import React from 'react'
 
 import { DefaultLayout } from 'components'
+import { ControlledSelect } from 'components'
 
 const Dashboard = () => {
-
+  
   return (
     <DefaultLayout>
-      <p>Chegou no Dashboard , Parabéns! </p>
+
+    <ControlledSelect>a</ControlledSelect>
+
     </DefaultLayout>
   )
 }
 
-export default Dashboard
+ export default Dashboard
