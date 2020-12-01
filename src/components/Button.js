@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles({
   button: {
     textTransform: 'capitalize',
-    padding: '10px 0',
+    padding: '10px 10px',
   },
 })
 

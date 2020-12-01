@@ -29,11 +29,11 @@ const Login = (props) => {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
   const isLogged = useSelector((state) => !!state.user.token)
-  
+
   const classes = useStyles(props)
-  
+
   if (isLogged) history.replace('/')
-  
+
   const handleSubmit = async (evt) => {
     evt.preventDefault()
     setLoading(true)
@@ -41,15 +41,12 @@ const Login = (props) => {
     setLoading(false)
     if (success) history.replace('/')
   }
-  
-  
+
   return (
     <Container full center>
       <Loading open={loading} />
-      <form onSubmit={handleSubmit}
-      className={classes.form}
-      >
-         <Paper maxWidth={380}>
+      <form onSubmit={handleSubmit} className={classes.form}>
+        <Paper maxWidth={380}>
           <Container center column>
             <Avatar
               size={92}
@@ -64,7 +61,7 @@ const Login = (props) => {
               Seja bem vindo Combatente
             </Text>
             <Text variant="body1">Insira seus dados para continuar </Text>
-          </Container>  
+          </Container>
 
           <Input
             label="Usuário"
@@ -88,7 +85,6 @@ const Login = (props) => {
       </form>
     </Container>
   )
-  
 }
 
 export default Login
