@@ -8,7 +8,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import EditIcon from '@material-ui/icons/Create'
 import RemoveIcon from '@material-ui/icons/Delete'
 
-const options = ['Editar', 'Remover']
+//const options = ['Editar', 'Remover']
 
 const ITEM_HEIGHT = 48
 
