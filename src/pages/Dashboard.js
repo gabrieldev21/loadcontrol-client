@@ -5,7 +5,7 @@ import { DefaultLayout } from 'components'
 const Dashboard = () => {
   return (
     <DefaultLayout>
-      <>Hello</>
+      Estatos
       <p>Chegou no Dashboard , Parabéns! </p>
     </DefaultLayout>
   )
