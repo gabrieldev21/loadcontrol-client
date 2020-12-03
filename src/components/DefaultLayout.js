@@ -30,7 +30,7 @@ const list = [
     route: '/booking',
     subList: [
       { text: 'Motorola', icon: <RadioIcon />, route: '/motorola' },
-      { text: 'Harris', icon: <SettingsPhoneIcon />, route: '/' },
+      { text: 'Harris', icon: <SettingsPhoneIcon />, route: '/harris' },
     ],
   },
 
