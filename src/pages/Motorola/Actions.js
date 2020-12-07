@@ -7,13 +7,15 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import EditIcon from '@material-ui/icons/Create'
 import RemoveIcon from '@material-ui/icons/Delete'
+import { useHistory } from 'react-router-dom'
 
 //const options = ['Editar', 'Remover']
 
 const ITEM_HEIGHT = 48
 
-const Actions = () => {
+const Actions = ({ id }) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
+  const history = useHistory()
   const open = Boolean(anchorEl)
 
   const handleClick = (event) => {
@@ -22,6 +24,10 @@ const Actions = () => {
 
   const handleClose = () => {
     setAnchorEl(null)
+  }
+
+  const redirectEdit = () => {
+    history.push(`/motorola/editar/${id}`)
   }
 
   return (
@@ -47,7 +53,7 @@ const Actions = () => {
           },
         }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={redirectEdit}>
           <ListItemIcon>
             <EditIcon />
           </ListItemIcon>

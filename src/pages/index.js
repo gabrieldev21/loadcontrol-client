@@ -1,5 +1,7 @@
 export { default as Login } from './Login'
 export { default as Dashboard } from './Dashboard'
 export { default as Motorola } from './Motorola'
+export { default as EditMotorola } from './EditMotorola'
+export { default as RegisterMotorola } from './RegisterMotorola'
 export { default as Harris } from './Harris'
 export { default as Logout } from './Logout'

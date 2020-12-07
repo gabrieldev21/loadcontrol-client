@@ -8,7 +8,15 @@ import {
   Redirect,
 } from 'react-router-dom'
 
-import { Login, Dashboard, Logout, Motorola, Harris } from 'pages'
+import {
+  Login,
+  Dashboard,
+  Logout,
+  Motorola,
+  Harris,
+  EditMotorola,
+  RegisterMotorola,
+} from 'pages'
 
 const PrivateRoute = (props) => {
   const isLogged = useSelector((state) => !!state.user.token)
@@ -24,6 +32,12 @@ const Routes = () => {
         </PrivateRoute>
         <PrivateRoute path="/motorola" exact>
           <Motorola />
+        </PrivateRoute>
+        <PrivateRoute path="/motorola/cadastrar" exact>
+          <RegisterMotorola />
+        </PrivateRoute>
+        <PrivateRoute path="/motorola/editar/:id" exact>
+          <EditMotorola />
         </PrivateRoute>
         <PrivateRoute path="/harris" exact>
           <Harris />
