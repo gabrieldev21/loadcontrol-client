@@ -15,6 +15,7 @@ import {
   Motorola,
   Harris,
   EditMotorola,
+  EditHarris,
   RegisterMotorola,
   RegisterHarris,
 } from 'pages'
@@ -46,9 +47,9 @@ const Routes = () => {
         <PrivateRoute path="/harris/cadastrar" exact>
           <RegisterHarris />
         </PrivateRoute>
-        {/* <PrivateRoute path="/harris/editar/id" exact>
-          <Harris />
-        </PrivateRoute> */}
+        <PrivateRoute path="/harris/editar/:id" exact>
+          <EditHarris />
+        </PrivateRoute>
         <PrivateRoute path="/logout" exact>
           <Logout />
         </PrivateRoute>

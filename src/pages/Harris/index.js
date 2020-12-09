@@ -35,16 +35,16 @@ const columns = [
 
 const rows = [
   {
+    id: 1,
     name: 'Falcon 3',
     serialNumber: 'JK46958',
     price: 'R$ 10.000,00',
-    actions: <Actions />,
   },
   {
+    id: 2,
     name: 'Falcon 2',
     serialNumber: 'ZICOIDE2305',
     price: 'R$ 30.000,00',
-    actions: <Actions />,
   },
 ]
 
