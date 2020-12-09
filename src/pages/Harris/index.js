@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 
 import { DefaultLayout, Button, Table, Text } from 'components'
@@ -33,22 +34,8 @@ const columns = [
   },
 ]
 
-const rows = [
-  {
-    id: 1,
-    name: 'Falcon 3',
-    serialNumber: 'JK46958',
-    price: 'R$ 10.000,00',
-  },
-  {
-    id: 2,
-    name: 'Falcon 2',
-    serialNumber: 'ZICOIDE2305',
-    price: 'R$ 30.000,00',
-  },
-]
-
 const Harris = () => {
+  const rows = useSelector((state) => state.reservation.rows)
   const history = useHistory()
   const classes = useStyles()
 

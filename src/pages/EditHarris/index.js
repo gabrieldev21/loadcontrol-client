@@ -1,8 +1,11 @@
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { useFormik } from 'formik'
 
+import { setRows } from 'redux/modules/reservation'
 import { DefaultLayout, Text, Input, Button } from 'components'
 
 const useStyles = makeStyles({
@@ -18,23 +21,51 @@ const useStyles = makeStyles({
 })
 
 const EditMotorola = () => {
+  const { id } = useParams()
+  const rows = useSelector((state) => state.reservation.rows)
+  const dispatch = useDispatch()
   const classes = useStyles()
   const history = useHistory()
+  const row = rows.find((r) => r.id.toString() === id.toString())
+  const formik = useFormik({
+    initialValues: row,
+  })
 
   const handleSave = () => {
-    history.push(`/motorola`)
+    const idx = rows.findIndex((r) => r.id.toString() === id.toString())
+    rows[idx] = formik.values
+    dispatch(setRows(rows))
+    history.push(`/harris`)
   }
   const handleCancel = () => {
-    history.push(`/motorola`)
+    history.push(`/harris`)
   }
 
   return (
     <DefaultLayout>
       <Text variant="h5">Editar Motorola</Text>
       <div className={classes.form}>
-        <Input label="Nome" />
-        <Input label="Número de Série" />
-        <Input label="Preço" />
+        <Input
+          label="Nome"
+          id="name"
+          name="name"
+          onChange={formik.handleChange}
+          value={formik.values.name}
+        />
+        <Input
+          label="Número de Série"
+          id="serialNumber"
+          name="serialNumber"
+          onChange={formik.handleChange}
+          value={formik.values.serialNumber}
+        />
+        <Input
+          label="Preço"
+          id="price"
+          name="price"
+          onChange={formik.handleChange}
+          value={formik.values.price}
+        />
         <div>
           <Button
             color={'secondary'}

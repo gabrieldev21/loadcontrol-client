@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useSelector, useDispatch } from 'react-redux'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -9,11 +10,16 @@ import EditIcon from '@material-ui/icons/Create'
 import RemoveIcon from '@material-ui/icons/Delete'
 import { useHistory } from 'react-router-dom'
 
+import { setRows } from 'redux/modules/reservation'
+
 const ITEM_HEIGHT = 48
 
 const Actions = ({ id }) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const history = useHistory()
+  const dispatch = useDispatch()
+  const rows = useSelector((state) => state.reservation.rows)
+
   const open = Boolean(anchorEl)
 
   const handleClick = (event) => {
@@ -21,6 +27,11 @@ const Actions = ({ id }) => {
   }
 
   const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  const handleDelete = () => {
+    dispatch(setRows(rows.filter((r) => r.id.toString() !== id.toString())))
     setAnchorEl(null)
   }
 
@@ -57,7 +68,7 @@ const Actions = ({ id }) => {
           </ListItemIcon>
           Editar
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleDelete}>
           <ListItemIcon>
             <RemoveIcon />
           </ListItemIcon>
