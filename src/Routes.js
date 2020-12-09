@@ -16,6 +16,7 @@ import {
   Harris,
   EditMotorola,
   RegisterMotorola,
+  RegisterHarris,
 } from 'pages'
 
 const PrivateRoute = (props) => {
@@ -42,6 +43,12 @@ const Routes = () => {
         <PrivateRoute path="/harris" exact>
           <Harris />
         </PrivateRoute>
+        <PrivateRoute path="/harris/cadastrar" exact>
+          <RegisterHarris />
+        </PrivateRoute>
+        {/* <PrivateRoute path="/harris/editar/id" exact>
+          <Harris />
+        </PrivateRoute> */}
         <PrivateRoute path="/logout" exact>
           <Logout />
         </PrivateRoute>

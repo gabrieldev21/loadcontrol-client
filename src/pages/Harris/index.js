@@ -2,7 +2,8 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
 import { DefaultLayout, Button, Table, Text } from 'components'
-import Actions from '../Motorola/Actions'
+import Actions from './Actions'
+import { useHistory } from 'react-router-dom'
 
 const useStyles = makeStyles({
   header: {
@@ -48,14 +49,23 @@ const rows = [
 ]
 
 const Harris = () => {
+  const history = useHistory()
   const classes = useStyles()
+
+  const redirectRegister = () => {
+    history.push(`/harris/cadastrar`)
+  }
+
   return (
     <DefaultLayout>
       <div className={classes.header}>
         <Text variant="h5">Reserva Harris</Text>
-        <Button>Cadastrar</Button>
+        <Button onClick={redirectRegister}>Cadastrar</Button>
       </div>
-      <Table columns={columns} rows={rows} />
+      <Table
+        columns={columns}
+        rows={rows.map((r) => ({ ...r, actions: <Actions id={r.id} /> }))}
+      />
     </DefaultLayout>
   )
 }

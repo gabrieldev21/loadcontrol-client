@@ -17,20 +17,20 @@ const useStyles = makeStyles({
   },
 })
 
-const RegisterMotorola = () => {
+const RegisterHarris = () => {
   const classes = useStyles()
   const history = useHistory()
 
   const handleSave = () => {
-    history.push(`/motorola`)
+    history.push(`/harris`)
   }
   const handleCancel = () => {
-    history.push(`/motorola`)
+    history.push(`/harris`)
   }
 
   return (
     <DefaultLayout>
-      <Text variant="h5">Cadastrar Motorola</Text>
+      <Text variant="h5">Cadastrar Harris</Text>
       <div className={classes.form}>
         <Input label="Nome" />
         <Input label="Número de Série" />
@@ -50,4 +50,4 @@ const RegisterMotorola = () => {
   )
 }
 
-export default RegisterMotorola
+export default RegisterHarris

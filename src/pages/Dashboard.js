@@ -5,8 +5,9 @@ import { DefaultLayout } from 'components'
 const Dashboard = () => {
   return (
     <DefaultLayout>
-      Estatos
-      <p>Chegou no Dashboard , Parabéns! </p>
+      <p>Pelotão PC, Desde 49 </p>
+      --------------------------
+      <p>Dashboard!</p>
     </DefaultLayout>
   )
 }
