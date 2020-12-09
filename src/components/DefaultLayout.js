@@ -24,15 +24,19 @@ const useStyles = makeStyles((theme) => ({
 
 const list = [
   { text: 'Dashboard', icon: <DashboardIcon />, route: '/' },
-  {
-    text: 'Reserva',
-    icon: <AssignmentIcon />,
-    route: '/booking',
-    subList: [
-      { text: 'Motorola', icon: <RadioIcon />, route: '/motorola' },
-      { text: 'Harris', icon: <SettingsPhoneIcon />, route: '/harris' },
-    ],
-  },
+  { text: 'Reserva', icon: <AssignmentIcon />, route: '/reserve' },
+
+  // {
+  //   text: 'Reserva',
+  //   icon: <AssignmentIcon />,
+  //   route: '/booking',
+
+  //   subList: [
+  //     { text: 'Motorola', icon: <RadioIcon />, route: '/motorola' },
+  //     { text: 'Harris', icon: <SettingsPhoneIcon />, route: '/harris' },
+  //   ],
+
+  // },
 
   { text: 'Logout', icon: <PowerSettingsNewIcon />, route: '/logout' },
 ]

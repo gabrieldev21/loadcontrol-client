@@ -1,5 +1,8 @@
 export { default as Login } from './Login'
 export { default as Dashboard } from './Dashboard'
+export { default as MatReserv } from './Reserve'
+export { default as RegisterReserve } from './Reserve/Register'
+export { default as EditReserve } from './Reserve/Edit'
 export { default as Motorola } from './Motorola'
 export { default as EditMotorola } from './EditMotorola'
 export { default as RegisterMotorola } from './RegisterMotorola'

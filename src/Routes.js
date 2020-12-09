@@ -12,6 +12,9 @@ import {
   Login,
   Dashboard,
   Logout,
+  MatReserv,
+  RegisterReserve,
+  EditReserve,
   Motorola,
   Harris,
   EditMotorola,
@@ -31,6 +34,15 @@ const Routes = () => {
       <Switch>
         <PrivateRoute path="/" exact>
           <Dashboard />
+        </PrivateRoute>
+        <PrivateRoute path="/reserve" exact>
+          <MatReserv />
+        </PrivateRoute>
+        <PrivateRoute path="/reserve/cadastrar" exact>
+          <RegisterReserve />
+        </PrivateRoute>
+        <PrivateRoute path="/reserve/editar/:id" exact>
+          <EditReserve />
         </PrivateRoute>
         <PrivateRoute path="/motorola" exact>
           <Motorola />

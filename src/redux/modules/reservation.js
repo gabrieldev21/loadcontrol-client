@@ -21,6 +21,18 @@ const initialState = {
       serialNumber: 'ZICOIDE2305',
       price: 'R$ 30.000,00',
     },
+    {
+      id: 3,
+      name: 'Apx2000',
+      serialNumber: 'JK46958',
+      price: 'R$ 5000,00',
+    },
+    {
+      id: 4,
+      name: 'Xts1500',
+      serialNumber: 'ZICOIDE2305',
+      price: 'R$ 3000,00',
+    },
   ],
 }
 
