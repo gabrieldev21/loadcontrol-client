@@ -21,6 +21,10 @@ const columns = [
     text: 'Nome',
   },
   {
+    name: 'factory',
+    text: 'Fabricante',
+  },
+  {
     name: 'serialNumber',
     text: 'Número de Série',
   },

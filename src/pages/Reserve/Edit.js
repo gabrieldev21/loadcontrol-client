@@ -35,10 +35,10 @@ const EditReserve = () => {
     const idx = rows.findIndex((r) => r.id.toString() === id.toString())
     rows[idx] = formik.values
     dispatch(setRows(rows))
-    history.push(`/harris`)
+    history.push(`/reserve`)
   }
   const handleCancel = () => {
-    history.push(`/harris`)
+    history.push(`/reserve`)
   }
 
   return (
@@ -51,6 +51,13 @@ const EditReserve = () => {
           name="name"
           onChange={formik.handleChange}
           value={formik.values.name}
+        />
+        <Input
+          label="Fabricante"
+          id="factory"
+          name="factory"
+          onChange={formik.handleChange}
+          value={formik.values.factory}
         />
         <Input
           label="Número de Série"

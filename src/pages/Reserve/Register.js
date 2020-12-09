@@ -51,6 +51,13 @@ const RegisterReserve = () => {
           value={formik.values.name}
         />
         <Input
+          label="Fabricante"
+          id="factory"
+          name="factory"
+          onChange={formik.handleChange}
+          value={formik.values.factory}
+        />
+        <Input
           label="Número de Série"
           id="serialNumber"
           name="serialNumber"
