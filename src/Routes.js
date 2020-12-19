@@ -15,12 +15,6 @@ import {
   MatReserv,
   RegisterReserve,
   EditReserve,
-  Motorola,
-  Harris,
-  EditMotorola,
-  EditHarris,
-  RegisterMotorola,
-  RegisterHarris,
 } from 'pages'
 
 const PrivateRoute = (props) => {
@@ -43,24 +37,6 @@ const Routes = () => {
         </PrivateRoute>
         <PrivateRoute path="/reserve/editar/:id" exact>
           <EditReserve />
-        </PrivateRoute>
-        <PrivateRoute path="/motorola" exact>
-          <Motorola />
-        </PrivateRoute>
-        <PrivateRoute path="/motorola/cadastrar" exact>
-          <RegisterMotorola />
-        </PrivateRoute>
-        <PrivateRoute path="/motorola/editar/:id" exact>
-          <EditMotorola />
-        </PrivateRoute>
-        <PrivateRoute path="/harris" exact>
-          <Harris />
-        </PrivateRoute>
-        <PrivateRoute path="/harris/cadastrar" exact>
-          <RegisterHarris />
-        </PrivateRoute>
-        <PrivateRoute path="/harris/editar/:id" exact>
-          <EditHarris />
         </PrivateRoute>
         <PrivateRoute path="/logout" exact>
           <Logout />

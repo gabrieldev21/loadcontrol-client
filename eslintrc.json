@@ -1,60 +1,63 @@
 {
-    "parser": "babel-eslint",
-    "extends": [
-      "airbnb",
-      "plugin:jsx-a11y/recommended",
-      "plugin:redux-saga/recommended",
-      "plugin:prettier/recommended",
-      "prettier/react"
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "plugin:redux-saga/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import",
+    "redux-saga",
+    "prettier"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "never"
     ],
-    "plugins": [
-      "react",
-      "jsx-a11y",
-      "import",
-      "redux-saga",
-      "prettier"
+    "prettier/prettier": "error",
+    "react/prop-types": 0,
+    "no-underscore-dangle": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
     ],
-    "rules": {
-      "semi": ["error", "never"],
-      "prettier/prettier": "error",
-      "react/prop-types": 0,
-      "no-underscore-dangle": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "max-len": [
-        "error",
-        120,
-        2
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true
-        }
-      ],
-      "import/newline-after-import": "error",
-      "import/no-named-as-default": 0
-    },
-    "env": {
-      "browser": true,
-      "jest": true
-    },
-    "globals": {
-      "Generator": true,
-      "context": true
-    },
-    "settings": {
-      "import/resolver": {
-        "webpack": {
-          "config": "./config/prod.js"
-        }
+    "max-len": [
+      "error",
+      120,
+      2
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/newline-after-import": "error",
+    "import/no-named-as-default": 0
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "Generator": true,
+    "context": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/prod.js"
       }
     }
   }
+}
