@@ -38,3 +38,4 @@ Senha: admin
 
 loadcontrol é perfeito para quem precisa gerenciar material. 
 
+Se encontra hospedado em: https://loadcontrol.netlify.app
