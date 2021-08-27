@@ -30,6 +30,10 @@ $ yarn start
 ```
 O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
+Para logar:
+Usuário: admin
+Senha: admin
+
 ## Projeto
 
 loadcontrol é perfeito para quem precisa gerenciar material. 
